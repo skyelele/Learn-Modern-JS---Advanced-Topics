@@ -78,6 +78,8 @@ let str1 = str.replace("2018", "2019");
 
 let str2 = str1.toUpperCase();
 
+// Removes whitespace from beginning
+// anda end of a string
 let str3 = str2.trim();
 
 console.log(str3);
@@ -98,3 +100,44 @@ let fruitStr = fruit
   .join(" - ");
 
 // "applie - kiwi - orange - peach - pear"
+
+// Method chaining part #2
+
+let student = {
+  fName: "Steven",
+  lName: "Hancock",
+  score: [],
+  total: 0,
+  average: 0,
+  addScore: function(val) {
+    this.score.push(val);
+    return this;
+  },
+  doTotal: function() {
+    this.total = this.score.reduce(function(x, y) {
+      return x + y;
+    }, 0);
+    return this;
+  },
+  doAverage: function() {
+    this.average = this.total / this.score.length;
+    return this;
+  }
+};
+
+student.addScore(100);
+student.addScore(80);
+student.addScore(95);
+student.doTotal();
+student.doAverage();
+
+// Allow method chaining by
+// plugging "return this"
+// inside the object functions.
+
+student
+  .addScore(100)
+  .addScore(80)
+  .addScore(95)
+  .doTotal()
+  .doAverage();

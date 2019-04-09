@@ -1,0 +1,31 @@
+1. To change a property attribute, you call Object.defineProperty and pass in 3 arguments. CHoose those 3 and the correct order.
+
+The object, the property to change, and an object that contains the attribute and the value:
+
+Object.defineProperty(obj, "startdate", {
+  writable: false
+});
+
+2. How to prevent a property on an object from being changed?
+
+Use Object.defineProperty and set the writable attribute to false.
+
+Object.defineProperty(obj, "type", {enumerable: false});
+
+Object.defineProperty(obj, "type", {
+  configurable: false
+})
+
+3. Javascript objects are not immutable by default.
+
+4. How to grab all properties that belong to an object, not including its prototype chain?
+
+Object.keys()
+
+5. Which command will transfer properties from one or more objects into a single object?
+
+Object.assign();
+
+6. What must you do in an object method so that chaining is possible?
+
+Return the object using this.
