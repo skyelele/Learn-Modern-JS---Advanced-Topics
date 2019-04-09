@@ -1,0 +1,61 @@
+1. First-class functions
+
+Functions are treated as values and can be assigned to variables and passed around.
+
+2. The following are objects:
+
+Functions
+Arrays
+User defined objects
+
+3. True or False: A function expression is hoisted.
+
+FALSE.
+
+4. Object properties can be the following data types:
+
+strings
+numbers
+functions
+objects
+arrays
+
+5. What can you use to determine if a property exists in an object?
+
+in
+hasOwnProperty
+
+6. The keyword this is established when a funtion is invoked.
+
+7. The prototype of an object is another object.
+
+8. JavaScript objects have access to properties and methods that exist in the object's prototype chain.
+
+9. If you have a general function that acts on objects through this binding, and you would like to use this function for a specific object, how could you accomplish that?
+
+a. Create a method on the object that references the function. Then, invoke the method.
+
+b. Create a new function using bind and bind the object. Then, invoke the function.
+
+c. Invoke the function using call and pass in the object.
+
+12. When using bind, it returns what?
+
+A function!
+
+13. True or False: Use a constructor if you want to create multiple, similar objects.
+
+True
+
+14. Objects created from a constructor have the same prototype. Where does that prototype object come from?
+
+It is the object assigned to the prototype property of the constructor function.
+
+15. Issue with constructor functions?
+
+If not invoked with this, it will invade the global space.
+
+16. What are the main advantages of arrow functions?
+
+a. They can be created with minimal syntax.
+b. They define the value of this lexically instead of how JavaScript traditionally does it.
