@@ -46,3 +46,49 @@ var secondNum = (function() {
 (function() {
   console.log(secondNum);
 })();
+
+// Understanding Closure
+
+(function() {
+  var cnt = 0;
+  item1 = document.querySelector("#item1");
+  item2 = document.querySelector("#item2");
+
+  var print = function() {
+    console.log(cnt);
+  };
+
+  item1.addEventListener("click", function() {
+    cnt++;
+    print();
+  });
+
+  item2.addEventListener("click", function() {
+    cnt++;
+    print();
+  });
+})();
+
+// Avoiding Global Variables
+
+(function() {
+  var counter = 0;
+  doc = this.document;
+  content = doc.getElementById("content");
+  quotes = content.querySelectorAll(".quote");
+
+  window.addEventListener(
+    "keydown",
+    function(e) {
+      switch (e.keycode) {
+        case 40:
+          if (counter < quotes.length) {
+            quotes[counter].style.visibility = "visible";
+            counter++;
+          }
+          break;
+      }
+    },
+    false
+  );
+})();
