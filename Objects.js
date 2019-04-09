@@ -34,3 +34,38 @@ var properties = Object.keys(person1);
 
 // properties; logs the following -->
 // ["firstName", "lastName", "email", "type", "active", "address"]
+
+var obj = {
+  firstName: "Steven",
+  lastName: "Smith",
+  startDate: "January 10, 2015",
+  type: "admin"
+};
+
+Object.defineProperty(obj, "startDate", {
+  writable: false
+});
+
+obj.firstName = "Steve";
+
+obj.startDate = "January 5, 2016";
+
+// Using seal() method to make an
+// object immutable :)
+
+Object.seal(obj);
+
+// Cannot create new property
+obj.newProp = true;
+
+// Cannot delete existing property
+delete obj.type;
+
+// CAN modify a value of an existing property
+obj.firstName = "Steve";
+
+Object.freeze(obj);
+
+// Cannot create new property
+// Cannot delete existing property
+// Cannot modify a value of an existing property
