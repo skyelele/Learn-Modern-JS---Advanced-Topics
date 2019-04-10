@@ -1,0 +1,43 @@
+// Functional Programming Concepts
+
+In pure functional programming no state is modified, instead new values are created. A side-effect is when this rule is violated (i.e. new values are created) and the program modifies a state variable or does some I/O (input, output). The idea is that a pure function is deterministic and if repeated with the same inputs will compute the same result. Functional languages vary in their purity. The most pure require that IO and state are explicit in the function signatures.
+
+- Avoid side effects
+
+In CS, a function or expression is said to have a side effect if it modifies some state outside its local environment or has an observable interaction with the outside world besides returning a value. Examples include modifying a non-local variable, modifying a static local variable, modifying an argument passed by reference, or calling other side-effect functions.
+
+- Avoid mutations
+
+One of the core principles of functional programming is to not change things. CHanges lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+
+In functional programming, changing or altering things is called mutation, and the oucode is called a side effect. A function, ideally, should be a pure function , meaning that it does not cause any side effects.
+
+- Avoid shared state
+
+Shared state is state which is shared between more than one function or more than one data-structure. When the state is immutable ( can't be changed), this is relatively harmless and is basically a memory saving mechanism. When the shared state is mutable (can be changed), it can be hard to reason about. If shared state is mutable (can be changed), it can be hard to reason about. If shared state is mutable and used simultaneously by multiple threads, then the program will need to use locks or other mechanisms to operate on the state. THis makes for more complexity and less modularity. However, shared state may be required for certain applications, as all the laternatives are less performants.
+
+- Use pure functions
+
+A function where the return value is only determined by its input values, without observable side effects. This is how functions in Math work: Math.cos(x) will, for the same value of x, always return the same result. Computing it does not change x. It does not write to log files, do network requests, ask for user input, or change program state. It's a coffee grinder: beans go in, powder comes out, end of story.
+
+
+- Use function composition
+
+The act or machanism to combine simple functions to build more complicated ones. Like the usual composition of functions in math, the result of feach function is passed as the argument of the next, and the result of the last one is the result of the whole.
+
+Programmers frequently apply functions to results of other functions, and almost all programming languages allow it. In some cases, the composition of functions is interesting as a function in its own right, to be used later.
+
+- Use declarative code instead of imperative code
+
+Imperative Paradigm:
+
+Procedural and object-oriented programming belong under imperative paradigm that you know from languages like C, C + + , C3, PHP, Java and of course Assenbly.
+
+Your code focuses on creating statemments that change program states by creating algorithyms that tell the computer how to do things. It closely relates to how hardware works. Typically your code will make use of conditional statements, loops and class inheritence.
+
+Declarative Paradigm:
+
+Logic, functional and domain-specific languages belong under declarative paradigms and they are not always Turing-complete (they are not always universal programming languages). Examples would be HTML, XML, CSS, SQL, Prolog, Haskell, F# and Lisp.
+
+Declarative code focuses on building logic of software without actually describing its flow. You are saying what without adding how. FOr example, with HTML, you use <img src="./image.jpg" /> to tell browser to display an image and you don't care how it does that.
+
